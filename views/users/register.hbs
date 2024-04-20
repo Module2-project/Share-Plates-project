@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Register</h1>
+
+    <form action="/users/register" method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input value="{{user.username}}" type="text" class="form-control" id="username" name="username" />
+            {{#if errors.username}}
+            <div class="alert alert-danger mt-2">{{errors.username}}</div>
+            {{/if}}
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input value="{{user.email}}" type="email" class="form-control" id="email" name="email" />
+            {{#if errors.email}}
+            <div class="alert alert-danger mt-2">{{errors.email}}</div>
+            {{/if}}
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" />
+            {{#if errors.password}}
+            <div class="alert alert-danger mt-2">{{errors.password}}</div>
+            {{/if}}
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
