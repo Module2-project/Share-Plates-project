@@ -45,4 +45,4 @@ const planSchema = new mongoose.Schema({
 });
 
 const Plan = mongoose.model("Plan", userSchema);
-module.exports = Plan; 
+module.exports = Plan;

@@ -1,0 +1,73 @@
+<div class="container">
+    <h1>Register a plan</h1>
+
+    <form action="/plans/register" method="POST" enctype="multipart/form-data"></form>>
+        <div class="mb-3">
+            <label for="planname" class="form-label">Planname</label>
+            <input value="{{values.planname}}" type="text" class="form-control" id="planname" name="planname" />
+            {{#if errors.planname}}
+            <div class="alert alert-danger mt-2">{{errors.planname}}</div>
+            {{/if}}
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input value="{{values.date}}" type="email" class="form-control" id="date" name="date" />
+            {{#if errors.date}}
+            <div class="alert alert-danger mt-2">{{errors.date}}</div>
+            {{/if}}
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input value="{{values.location}}" type="location" class="form-control" id="location" name="location" />
+            {{#if errors.location}}
+            <div class="alert alert-danger mt-2">{{errors.location}}</div>
+            {{/if}}
+        </div>
+           <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input value="{{values.description}}"  type="description" class="form-control" id="description" name="description" />
+            {{#if errors.description}}
+            <div class="alert alert-danger mt-2">{{errors.description}}</div>
+            {{/if}}
+        </div>
+           <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input value="{{values.price}}" type="price" class="form-control" id="price" name="price" />
+            {{#if errors.price}}
+            <div class="alert alert-danger mt-2">{{errors.price}}</div>
+            {{/if}}
+        </div>
+           <div class="mb-3">
+            <label for="cuisineType" class="form-label">Cuisine Type</label>
+            <input value="{{values.cuisineType}}" type="cuisineType" class="form-control" id="cuisineType" name="cuisineType" />
+            {{#if errors.cuisineType}}
+            <div class="alert alert-danger mt-2">{{errors.cuisineType}}</div>
+            {{/if}}
+        </div>
+        </div>
+           <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input value="{{values.image}}" type="cuisineType" class="image" id="image" name="image" />
+            {{#if errors.image}}
+            <div class="alert alert-danger mt-2">{{errors.image}}</div>
+            {{/if}}
+        </div>
+        </div>
+           <div class="mb-3">
+            <label for="comments" class="form-label">Comments</label>
+            <input value="{{values.comments}}" type="comments" class="form-control" id="comments" name="comments" />
+            {{#if errors.comments}}
+            <div class="alert alert-danger mt-2">{{errors.comments}}</div>
+            {{/if}}
+        </div>
+        </div>
+           <div class="mb-3">
+            <label for="url" class="form-label">URL</label>
+            <input value="{{values.url}}" type="url" class="form-control" id="url" name="url" />
+            {{#if errors.url}}
+            <div class="alert alert-danger mt-2">{{errors.url}}</div>
+            {{/if}}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
