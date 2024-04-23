@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const { REQUIRED_FIELD_ERROR } = require("../constants/errorMessages");
 const cuisineTypes = require("../constants/cuisineTypes");
 
-const userSchema = new mongoose.Schema({
+const planSchema = new mongoose.Schema({
   planname: {
     type: String,
     required: [true, REQUIRED_FIELD_ERROR],
@@ -43,3 +43,6 @@ const userSchema = new mongoose.Schema({
     type: String,
   },
 });
+
+const Plan = mongoose.model("Plan", userSchema);
+module.exports = Plan; 
