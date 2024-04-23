@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const usersController = require("../controllers/users.controller");
 const miscController = require("../controllers/misc.controller");
+const plansController = require("../controllers/plans.controller");
 
 // aqui pongo las rutas , voy  a poner por lo pronto las de carlos
 

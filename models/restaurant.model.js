@@ -1,12 +1,9 @@
-// requerimos mongoose
-
 const mongoose = require("mongoose");
 
-//aqui lo que hacemos es el esquema de como tiene que ser los ussers , con todo lo que tiene que llevar , lo que es requerido y todas las reglas
-// hemos puesto el esquema de ejemplo que nos dejo carlos , pero la idea es hacer uno propio
+const { REQUIRED_FIELD_ERROR } = require("../constants/errorMessages");
 
-const userSchema = new mongoose.Schema({
-  username: {
+const restaurantSchema = new mongoose.Schema({
+  restaurantname: {
     type: String,
     required: [true, REQUIRED_FIELD_ERROR],
     trim: true,
@@ -28,5 +25,5 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model("User", userSchema);
-module.exports = User;
+const Restaurant = mongoose.model("Restaurant", userSchema);
+module.exports = Restaurant;
