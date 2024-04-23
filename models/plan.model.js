@@ -36,6 +36,9 @@ const userSchema = new mongoose.Schema({
   image: {
     type: String,
   },
+  comments: {
+    type: String,
+  },
   url: {
     type: String,
   },
