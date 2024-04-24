@@ -1,0 +1,36 @@
+[
+    {
+        "planname": "Tardeo en el Retiro y cena en restaurante Kulto",
+        "date": "Sábado 11 de Mayo de 2024, 19h",
+        "location": "Calle De Ibiza, 4, 28009, Madrid, España",
+        "description": "Quedaremos en la puerta principal del parque del Retiro, daremos algún paseo por la Rosaleda y luego iremos a cenar al restaurante Kulto",
+        "price": "16€ - 48€",
+        "cuisineType": ["Española", "Mediterránea", "Fusión"],
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/6e/f8/7c/pincho-moruno-a-la-brasa.jpg?w=1400&h=-1&s=1",
+        "comments": "La reserva será para los primeros 10 en apuntarse. En este precioso restaurante cenaremmos algo rico y disfrutaremmos en buena compañía",
+        "url": "https://kulto.es/"
+    },
+    {
+    "planname": "Cena en restaurante Japonés",
+    "date": "Viernes 3 de Mayo de 2024, 20h",
+    "location": "Avenida de Brasil,16, 28020, Madrid, España",
+    "description": "Si te gusta la comida japonesa no puedes perderte este plan. Miss Sushi tiene una decoración muy bonita, además de una estupenda comida. Seguro que pasaremos un rato muy agradable disfrutando en buena compañía",
+    "price": "13€ - 27€",
+    "cuisineType": ["Asiática", "Vegana"],
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/a3/64/14/getlstd-property-photo.jpg?w=2400&h=-1&s=1",
+    "comments": "La reserva será para las 8 primeras personas en reservar",
+    "url": "https://misssushi.es/restaurantes/miss-sushi-avenida-de-brasil"
+   },
+   {
+    "planname": "Comida en taberna Gallega",
+    "date": "Sábado 25 de Mayo de 2024, 15h",
+    "location": "Calle Jorge Juan, 29 28001, Madrid, España",
+    "description": "En esta taberna Gallega tapearemos lo que queramos, ,entre otras cosas,su rica tortilla de Betanzos, la cazuela de pulpo, langostinos, almejas, croquetas...",
+    "price": "15€ - 25€",
+    "cuisineType": ["Española", "Mediterránea"],
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/76/d6/bf/zamburinas.jpg?w=1100&h=-1&s=1",
+    "comments": "La reserva será para las 8 primeras personas en reservar",
+    "url": "https://ocafu.com/"
+   },
+
+]
