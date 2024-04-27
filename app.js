@@ -5,7 +5,7 @@ const path = require("path");
 const hbs = require("hbs");
 const logger = require("morgan");
 const app = express();
-
+const session = require("./config/session.config");
 // aqui estamos requiriendo la confi de moongose que la tendremos por separado
 
 require("./config/db.config");
@@ -28,6 +28,9 @@ app.use(express.urlencoded({ extended: true }));
 
 hbs.registerPartials(path.join(__dirname, "/views/partials"));
 app.use(express.static("public"));
+
+app.use(session.sessionConfig);
+app.use(session.getCurrentCurrentUser);
 
 // para indicar donde estan las routes
 

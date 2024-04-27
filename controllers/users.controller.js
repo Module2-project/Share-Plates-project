@@ -1,5 +1,5 @@
 //empezamos requierosiendo el user model que queremos  atacar con este controller
-
+const mongoose = require("mongoose");
 const User = require("../models/user.model");
 
 module.exports.getUsers = (req, res, next) => {
@@ -17,16 +17,29 @@ module.exports.register = (req, res, next) => {
   res.render("users/register");
 };
 
+// Recibo un post con los campos del usuario y lo guardo en base de datos
 module.exports.doRegister = (req, res, next) => {
-  console.log(req.body);
+  const renderWithErrors = (errors, values) => {
+    res.render("register", { errors, values });
+  };
+
+  if (req.file) {
+    req.body.avatar = req.file.path;
+  }
 
   User.create(req.body)
-    .then((user) => {
-      console.log("User created:", user);
-      res.redirect("/users");
+    .then(() => {
+      res.redirect("/login");
     })
     .catch((err) => {
-      console.log(err);
-      res.render("users/register", { errors: err.errors, user: req.body });
+      if (err instanceof mongoose.Error.ValidationError) {
+        renderWithErrors(err.errors, req.body);
+      } else {
+        next(err);
+      }
     });
+};
+module.exports.getCurrentUserProfile = (req, res, next) => {
+  console.log(req.currentUser);
+  res.render("profile");
 };
