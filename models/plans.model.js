@@ -26,11 +26,7 @@ const planSchema = new mongoose.Schema({
     trim: true,
   },
   price: {
-<<<<<<< HEAD
-    type: Number,
-=======
     type: [Number],
->>>>>>> main
     required: [true, REQUIRED_FIELD_ERROR],
     maxLength: 2,
     minLength: 2,
@@ -49,23 +45,6 @@ const planSchema = new mongoose.Schema({
   url: {
     type: String,
   },
-<<<<<<< HEAD
-  cuisineType: {
-    type: [String],
-    required: [true, REQUIRED_FIELD_ERROR],
-    enum: cuisineTypes, //en la carpeta de constantes están enumerados todos los tipos
-  },
-  image: {
-    type: String,
-  },
-  comments: {
-    type: String,
-  },
-  url: {
-    type: String,
-  },
-=======
->>>>>>> main
 });
 
 const Plan = mongoose.model("Plan", planSchema);

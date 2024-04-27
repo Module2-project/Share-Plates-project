@@ -4,11 +4,7 @@
     "date": "Sábado 11 de Mayo de 2024, 19h",
     "location": "Calle De Ibiza, 4, 28009, Madrid, España",
     "description": "Quedaremos en la puerta principal del parque del Retiro, daremos algún paseo por la Rosaleda y luego iremos a cenar al restaurante Kulto",
-<<<<<<< HEAD
-    "price": "16€ - 48€",
-=======
     "price": [16, 48],
->>>>>>> main
     "cuisineType": ["Española", "Mediterránea", "Fusión"],
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/6e/f8/7c/pincho-moruno-a-la-brasa.jpg?w=1400&h=-1&s=1",
     "comments": "La reserva será para los primeros 10 en apuntarse. En este precioso restaurante cenaremmos algo rico y disfrutaremmos en buena compañía",
@@ -19,11 +15,7 @@
     "date": "Viernes 3 de Mayo de 2024, 20h",
     "location": "Avenida de Brasil,16, 28020, Madrid, España",
     "description": "Si te gusta la comida japonesa no puedes perderte este plan. Miss Sushi tiene una decoración muy bonita, además de una estupenda comida. Seguro que pasaremos un rato muy agradable disfrutando en buena compañía",
-<<<<<<< HEAD
-    "price": "13€ - 27€",
-=======
     "price": [13, 27],
->>>>>>> main
     "cuisineType": ["Asiática", "Vegana"],
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/a3/64/14/getlstd-property-photo.jpg?w=2400&h=-1&s=1",
     "comments": "La reserva será para las 8 primeras personas en reservar",
@@ -34,11 +26,7 @@
     "date": "Sábado 25 de Mayo de 2024, 15h",
     "location": "Calle Jorge Juan, 29, 28001, Madrid, España",
     "description": "En esta taberna Gallega tapearemos lo que queramos, ,entre otras cosas,su rica tortilla de Betanzos, la cazuela de pulpo, langostinos, almejas, croquetas...",
-<<<<<<< HEAD
-    "price": "15€ - 25€",
-=======
     "price": [15, 25],
->>>>>>> main
     "cuisineType": ["Española", "Mediterránea"],
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/76/d6/bf/zamburinas.jpg?w=1100&h=-1&s=1",
     "comments": "La reserva será para las 8 primeras personas en reservar",
@@ -49,11 +37,7 @@
    "date": "Sábado 4 de Mayo de 2024, 21h",
    "location": "Calle de Goya, 82 Esquina Con Fernan Gonzalez, 28009 Madrid, España",
    "description": "Quedaremos en la entrada del restaurante sobre las 20:45h, podremos disfrutar de la rica comida Mexicana mientras charlamos un ratito",
-<<<<<<< HEAD
-   "price": "16€ - 32€",
-=======
    "price": [16, 32],
->>>>>>> main
    "cuisineType": ["Mexicana", "Fusión"],
    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/4f/2a/01/tacos-pastor.jpg?w=2000&h=-1&s=1",
    "comments": "La reserva será para los primeros 10 en apuntarse.",
@@ -64,11 +48,7 @@
     "date": "Viernes 24 de Mayo de 2024, 21h",
     "location": "Calle de José Ortega y Gasset, 89-91, 28006, Madrid, España>",
     "description": "Quedaremos en la entrada del restaurante sobre las 20:45hh. Compartiremos risas y buenos momentos",
-<<<<<<< HEAD
-    "price": "30€ - 39€",
-=======
     "price": [30, 39],
->>>>>>> main
     "cuisineType": ["India", "Asiática", "Saludable"],
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/1f/58/0a/tandoori-station.jpg?w=2400&h=-1&s=1",
     "comments": "La reserva será para los primeros 10 en apuntarse. No se lo piensen y vengan a disfrutar",
@@ -79,11 +59,7 @@
     "date": "Sábado 4 de Mayo de 2024, 21:30h",
     "location": "Calle Serrano,1, Plaza de la Independencia, 28001, Madrid, España",
     "description": "Quedamos en la entrada del resturante Patio de Leones a las 21h. Cenaremos en esta preciosa terraza cubierta, perfecta para tapear, con muy buen ambiente y cocina española",
-<<<<<<< HEAD
-    "price": "32€ - 43€",
-=======
     "price": [32, 43],
->>>>>>> main
     "cuisineType": ["Española", "Mediterránea"],
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/cf/a8/df/terrace.jpg?w=1400&h=-1&s=1",
     "comments": "La reserva será para los primeros 9 en apuntarse. Cada uno paga lo que consume. Después podemos ir a tomar algo y disfrutar de un concierto de rumba flamenca",
