@@ -1,7 +1,7 @@
-// Crear unos cuantos libros bajo el comando de consola npm run seeds para tener un estado inicial en la base de datos.
 const mongoose = require("mongoose");
-const Book = require("../models/Book.model");
-const booksJSON = require("../data/plans.json");
+
+const Plan = require("../models/plans.model");
+const plansJSON = require("../data/plans.json");
 
 // Me conecto a la base de datos
 require("../config/db.config");
@@ -16,11 +16,11 @@ mongoose.connection.once("open", () => {
       console.log("Database cleared");
 
       // Lanzar la petición a mongo de crear los libros a partir del JSON
-      return plan.create(booksJSON);
+      return Plan.create(plansJSON);
     })
     .then((newPlans) => {
       newPlans.forEach((plan) => {
-        console.log(`${User} has been created`);
+        console.log(`${plan.planname} has been created`);
       });
 
       console.log(`${newPlans.length} plans have been created`);

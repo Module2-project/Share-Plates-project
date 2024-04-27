@@ -1,63 +1,64 @@
 // metido a copia/pega , revisar y modificar
-/*
+
 const createError = require("http-errors");
 
 const plan = require("../models/plans.model");
+const cuisineTypeArr = require("../constants/cuisineTypes");
 
-
-module.exports.getBooks = (req, res, next) => {
-  const { genres, maxPages, minPages, author } = req.query;
+module.exports.getPlans = (req, res, next) => {
+  const { cuisineType, maxPrice, minPrice, location } = req.query;
 
   const query = {};
 
-  if (genres) {
-    query.genres = genres;
+  if (cuisineType) {
+    query.cuisineType = cuisineType;
   }
 
-  if (minPages) {
-    query.pages = { $gte: minPages };
+  if (minPrice) {
+    query.prices = { $gte: minPrice };
   }
 
-  if (maxPages) {
-    query.pages = { $lte: maxPages };
+  if (maxPrice) {
+    query.price = { $lte: maxPrice };
   }
 
-  if (author) {
-    query.author = author;
+  if (location) {
+    query.location = location;
   }
 
-  Book.find(query)
-    .populate("author")
-    .then((books) => {
-      if (author) {
-        return Author.findById(author).then((authorDB) => {
-          if (authorDB) {
-            res.render("books/list", {
-              books,
+  plan
+    .find(query)
+    .populate("location")
+    .then((plans) => {
+      if (location) {
+        return location.findById(location).then((locationDB) => {
+          if (locationDB) {
+            res.render("plans/list", {
+              plans,
               genres: genresArr,
               author: authorDB.name,
             });
           } else {
-            res.render("books/list", { books, genres: genresArr });
+            res.render("plans/list", { plans, cuisineType: cuisineTypeArr });
           }
         });
       } else {
-        res.render("books/list", { books, genres: genresArr });
+        res.render("plans/list", { plans, cuisineType: cuisineTypeArr });
       }
     })
     .catch((err) => next(err));
 };
 
-module.exports.getBook = (req, res, next) => {
-  Book.findById(req.params.id)
-    .populate("author")
+module.exports.getPlan = (req, res, next) => {
+  Plan.findById(req.params.id)
+    .populate("cuisineType")
     .populate({
       path: "likes",
       populate: { path: "user", select: "email avatar" },
     })
     .then((book) => {
       if (!book) {
-        next(createError(404, "Libro no encontrado"));
+        next(createError(404, "Plan no encontrado"));
       }
 
       if (req.currentUser) {
@@ -66,13 +67,13 @@ module.exports.getBook = (req, res, next) => {
           book: req.params.id,
         }).then((like) => {
           if (like) {
-            res.render("books/detail", { book, liked: Boolean(like) });
+            res.render("plans/detail", { plan, liked: Boolean(like) });
           } else {
-            res.render("books/detail", { book });
+            res.render("plans/detail", { plan });
           }
         });
       } else {
-        res.render("books/detail", { book });
+        res.render("plans/detail", { plan });
       }
     })
     .catch((err) => next(err));

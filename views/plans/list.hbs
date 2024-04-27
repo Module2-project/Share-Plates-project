@@ -1,0 +1,41 @@
+<div class="container mt-3">
+    <form action="/plans" method="GET">
+        {{#each cuisineTypes as |cuisineType|}}
+        <button class="btn btn-outline-secondary" type="submit" name="cuisineTypes" value="{{cuisineType}}">{{cuisineType}}</button>
+        {{/each}}
+
+        <div>
+            <label for="minPrices">Mínimo de precio</label>
+            <input id="minPrices" type="range" name="minPrices">
+            <span>Value: <output id="minPrices"></output></span>
+        </div>
+        <div>
+            <label for="">Máximo de precios</label>
+            <input id="maxPrices" type="range" name="maxPrices">
+            <span>Value: <output id="maxPrices"></output></span>
+        </div>
+
+        <button class="btn btn-outline-primary">Enviar</button>
+        <a class="btn btn-secondary" href="/Plans">Limpiar filtros</a>
+    </form>
+
+
+<h1>Planes disponibles</h1>
+
+{{#if cuisineType}}
+<h4>Mostrando los Planes de {{cuisineType}}</h4>
+{{/if}}
+
+{{#if plans}}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {{#each plans as |plan|}}
+    <div class="col">
+        {{> plancard plan=plan}}
+    </div>
+    {{/each}}
+</div>
+{{else}}
+<p>No hay resultados con tus filtros actuales</p>
+{{/if}}
+
+</div>
