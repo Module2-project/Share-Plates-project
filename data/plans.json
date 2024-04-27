@@ -1,14 +1,14 @@
 [
     {
-        "planname": "Tardeo en el Retiro y cena en restaurante Kulto",
-        "date": "Sábado 11 de Mayo de 2024, 19h",
-        "location": "Calle De Ibiza, 4, 28009, Madrid, España",
-        "description": "Quedaremos en la puerta principal del parque del Retiro, daremos algún paseo por la Rosaleda y luego iremos a cenar al restaurante Kulto",
-        "price": "16€ - 48€",
-        "cuisineType": ["Española", "Mediterránea", "Fusión"],
-        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/6e/f8/7c/pincho-moruno-a-la-brasa.jpg?w=1400&h=-1&s=1",
-        "comments": "La reserva será para los primeros 10 en apuntarse. En este precioso restaurante cenaremmos algo rico y disfrutaremmos en buena compañía",
-        "url": "https://kulto.es/"
+    "planname": "Tardeo en el Retiro y cena en restaurante Kulto",
+    "date": "Sábado 11 de Mayo de 2024, 19h",
+    "location": "Calle De Ibiza, 4, 28009, Madrid, España",
+    "description": "Quedaremos en la puerta principal del parque del Retiro, daremos algún paseo por la Rosaleda y luego iremos a cenar al restaurante Kulto",
+    "price": "16€ - 48€",
+    "cuisineType": ["Española", "Mediterránea", "Fusión"],
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/6e/f8/7c/pincho-moruno-a-la-brasa.jpg?w=1400&h=-1&s=1",
+    "comments": "La reserva será para los primeros 10 en apuntarse. En este precioso restaurante cenaremmos algo rico y disfrutaremmos en buena compañía",
+    "url": "https://kulto.es/"
     },
     {
     "planname": "Cena en restaurante Japonés",
@@ -24,7 +24,7 @@
    {
     "planname": "Comida en taberna Gallega",
     "date": "Sábado 25 de Mayo de 2024, 15h",
-    "location": "Calle Jorge Juan, 29 28001, Madrid, España",
+    "location": "Calle Jorge Juan, 29, 28001, Madrid, España",
     "description": "En esta taberna Gallega tapearemos lo que queramos, ,entre otras cosas,su rica tortilla de Betanzos, la cazuela de pulpo, langostinos, almejas, croquetas...",
     "price": "15€ - 25€",
     "cuisineType": ["Española", "Mediterránea"],
@@ -32,5 +32,38 @@
     "comments": "La reserva será para las 8 primeras personas en reservar",
     "url": "https://ocafu.com/"
    },
-
+   {
+   "planname": "Comida Mexicana",
+   "date": "Sábado 4 de Mayo de 2024, 21h",
+   "location": "Calle de Goya, 82 Esquina Con Fernan Gonzalez, 28009 Madrid, España",
+   "description": "Quedaremos en la entrada del restaurante sobre las 20:45h, podremos disfrutar de la rica comida Mexicana mientras charlamos un ratito",
+   "price": "16€ - 32€",
+   "cuisineType": ["Mexicana", "Fusión"],
+   "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/4f/2a/01/tacos-pastor.jpg?w=2000&h=-1&s=1",
+   "comments": "La reserva será para los primeros 10 en apuntarse.",
+   "url": "http://www.oyamelmadrid.es/"
+   },
+   {
+    "planname": "Tandoori Station",
+    "date": "Viernes 24 de Mayo de 2024, 21h",
+    "location": "Calle de José Ortega y Gasset, 89-91, 28006, Madrid, España>",
+    "description": "Quedaremos en la entrada del restaurante sobre las 20:45hh. Compartiremos risas y buenos momentos",
+    "price": "30€ - 39€",
+    "cuisineType": ["India", "Asiática", "Saludable"],
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/1f/58/0a/tandoori-station.jpg?w=2400&h=-1&s=1",
+    "comments": "La reserva será para los primeros 10 en apuntarse. No se lo piensen y vengan a disfrutar",
+    "url": "https://www.tandooristation.com/es"
+    },
+    {
+    "planname": "Patio de Leones y olé",
+    "date": "Sábado 4 de Mayo de 2024, 21:30h",
+    "location": "Calle Serrano,1, Plaza de la Independencia, 28001, Madrid, España",
+    "description": "Quedamos en la entrada del resturante Patio de Leones a las 21h. Cenaremos en esta preciosa terraza cubierta, perfecta para tapear, con muy buen ambiente y cocina española",
+    "price": "32€ - 43€",
+    "cuisineType": ["Española", "Mediterránea"],
+    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/cf/a8/df/terrace.jpg?w=1400&h=-1&s=1",
+    "comments": "La reserva será para los primeros 9 en apuntarse. Cada uno paga lo que consume. Después podemos ir a tomar algo y disfrutar de un concierto de rumba flamenca",
+    "url": "https://www.facebook.com/Patiodeleones/"
+    },
+  
 ]
