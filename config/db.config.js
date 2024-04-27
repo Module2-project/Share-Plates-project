@@ -2,9 +2,14 @@
 
 const mongoose = require("mongoose");
 
-const MONGODB_URI = "mongodb://127.0.0.1:27017/node-basic-auth";
+const MONGODB_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017";
+const MONGODB_NAME = "share-plates";
+
+const DB = `${MONGODB_URI}/${MONGODB_NAME}`;
 
 mongoose
-  .connect(MONGODB_URI)
-  .then(() => console.info(`Connected to the database: ${MONGODB_URI}`))
-  .catch((error) => console.error("Database connection error:", error));
+  .connect(`${DB}`)
+  .then(() => console.log(`Connected to DB: ${MONGODB_NAME}`))
+  .catch((err) => console.error("Database error:", err));
+
+module.exports = DB;

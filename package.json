@@ -5,16 +5,25 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "dev": "nodemon app.js",
-    "start": "node app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+     "seeds": "node ./bin/seeds.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.1.0",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "express-session": "^1.18.0",
     "hbs": "^4.2.0",
+    "http-errors": "^2.0.0",
     "mongoose": "^8.3.1",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
     "nodemon": "^3.1.0"
   }
 }
