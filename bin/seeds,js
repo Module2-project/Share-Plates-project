@@ -1,4 +1,0 @@
-const mongoose = require('mongoose')
-
-// Me conecto a la base de datos
-require('../config/db.config');

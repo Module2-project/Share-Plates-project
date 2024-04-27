@@ -6,11 +6,15 @@ const authController = require("../controllers/auth.controller");
 const usersController = require("../controllers/users.controller");
 const miscController = require("../controllers/misc.controller");
 const plansController = require("../controllers/plans.controller");
+<<<<<<< HEAD
 
+=======
+const likesController = require("../controllers/likes.controller");
+>>>>>>> main
 const authMiddleware = require("../middlewares/auth.middleware");
 
 const upload = require("./storage.config");
-// aqui pongo las rutas , voy  a poner por lo pronto las de carlos
+// aqui pongo las rutas .
 
 router.get("/", (req, res, next) => res.render("home"));
 
@@ -40,6 +44,9 @@ router.get(
 );
 
 router.get("/logout", authMiddleware.isAuthenticated, authController.logout);
+
+router.get("/plans", plansController.getPlans);
+router.get("/plans/:id", plansController.getPlans);
 
 // esto es lo que hace que se enlace con el app.js
 
