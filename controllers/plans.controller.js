@@ -1,7 +1,7 @@
 // metido a copia/pega , revisar y modificar
 
 const createError = require("http-errors");
-
+const Like = require("../models/like.model");
 const plan = require("../models/plans.model");
 const cuisineTypeArr = require("../constants/cuisineTypes");
 
@@ -50,21 +50,22 @@ module.exports.getPlans = (req, res, next) => {
 };
 
 module.exports.getPlan = (req, res, next) => {
-  Plan.findById(req.params.id)
+  plan
+    .findById(req.params.id)
     .populate("cuisineType")
     .populate({
       path: "likes",
       populate: { path: "user", select: "email avatar" },
     })
-    .then((book) => {
-      if (!book) {
+    .then((plan) => {
+      if (!plan) {
         next(createError(404, "Plan no encontrado"));
       }
 
       if (req.currentUser) {
         return Like.findOne({
           user: req.currentUser._id,
-          book: req.params.id,
+          plan: req.params.id,
         }).then((like) => {
           if (like) {
             res.render("plans/detail", { plan, liked: Boolean(like) });
