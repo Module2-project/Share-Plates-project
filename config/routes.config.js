@@ -49,6 +49,8 @@ router.post(
   authMiddleware.isAuthenticated,
   likesController.doLike
 );
-// esto es lo que hace que se enlace con el app.js
+
+router.get("/create-plan", plansController.renderCreatePlan);
+router.post("/create-plan", plansController.createPlan);
 
 module.exports = router;

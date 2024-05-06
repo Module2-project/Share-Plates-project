@@ -35,8 +35,8 @@ module.exports.getPlans = (req, res, next) => {
           if (locationDB) {
             res.render("plans/list", {
               plans,
-              genres: genresArr,
-              author: authorDB.name,
+              location,
+              date,
             });
           } else {
             res.render("plans/list", { plans, cuisineType: cuisineTypeArr });
@@ -76,6 +76,43 @@ module.exports.getPlan = (req, res, next) => {
       } else {
         res.render("plans/detail", { plan });
       }
+    })
+    .catch((err) => next(err));
+};
+
+module.exports.renderCreatePlan = (req, res, next) => {
+  res.render("plans/create-plan");
+};
+
+module.exports.createPlan = (req, res, next) => {
+  const {
+    planname,
+    date,
+    location,
+    description,
+    price,
+    cuisineType,
+    image,
+    comments,
+    url,
+  } = req.body;
+
+  const newPlan = new Plan({
+    planname,
+    date,
+    location,
+    description,
+    price,
+    cuisineType,
+    image,
+    comments,
+    url,
+  });
+
+  newPlan
+    .save()
+    .then(() => {
+      res.redirect("/plans"); // Redirige a la lista de planes después de la creación
     })
     .catch((err) => next(err));
 };

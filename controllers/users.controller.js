@@ -1,6 +1,9 @@
 //empezamos requierosiendo el user model que queremos  atacar con este controller
 const mongoose = require("mongoose");
 const User = require("../models/user.model");
+const Like = require("../models/like.model");
+const Plan = require("../models/plans.model");
+const cuisineTypes = require("../constants/cuisineTypes");
 
 module.exports.getUsers = (req, res, next) => {
   User.find()
@@ -40,6 +43,43 @@ module.exports.doRegister = (req, res, next) => {
     });
 };
 module.exports.getCurrentUserProfile = (req, res, next) => {
-  console.log(req.currentUser);
-  res.render("profile");
+  Like.find({ user: req.currentUser._id })
+    .populate("plan")
+    .then((likes) => {
+      res.render("profile", { likes, cuisineTypes });
+    })
+    .catch((err) => next(err));
+};
+
+module.exports.createPlan = (req, res, next) => {
+  const {
+    planname,
+    date,
+    location,
+    description,
+    price,
+    cuisineType,
+    image,
+    comments,
+    url,
+  } = req.body;
+
+  const newPlan = new Plan({
+    planname,
+    date,
+    location,
+    description,
+    price,
+    cuisineType,
+    image,
+    comments,
+    url,
+  });
+
+  newPlan
+    .save()
+    .then(() => {
+      res.redirect("/profile");
+    })
+    .catch((err) => next(err));
 };
