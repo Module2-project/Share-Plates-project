@@ -21,9 +21,7 @@ router.get(
 );
 router.post(
   "/register",
-  authMiddleware.isNotAuthenticated,
-
-  usersController.doRegister
+  authMiddleware.isNotAuthenticated, upload.single('avatar'), usersController.doRegister
 );
 
 router.get("/login", authMiddleware.isNotAuthenticated, authController.login);
