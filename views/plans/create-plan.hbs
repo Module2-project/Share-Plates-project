@@ -1,31 +1,6 @@
-<div class="container mt-3">
-    <div class="d-flex flex-column text-center align-items-center gap-2">
-        <img class="rounded-circle border" src="{{currentUser.avatar}}" width="100" />
-        <div>
-            <h4>{{currentUser.username}}</h4>
-            <p>{{currentUser.email}}</p>
-        </div>
-    </div>
-
-    <h2 class="mt-4">Mis Planes</h2>
-    {{#if likes}}
-
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        {{#each likes as |like|}} 
-        <div class="col">
-            {{> plancard plan=like.plan}} 
-        </div>
-        {{/each}}
-    </div>
-
-    {{else}}
-    <p>No tienes planes favoritos aún. <a href="/plans">Explora nuestros planes</a></p>
-    {{/if}}
-
-
 <form>
 
-<h1>Crea tu propio plan</h1>
+    <h1>Crea tu propio plan</h1>
 
 
     <div class="mb-3">

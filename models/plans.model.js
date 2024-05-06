@@ -47,5 +47,12 @@ const planSchema = new mongoose.Schema({
   },
 });
 
+planSchema.virtual("likes", {
+  ref: "Like",
+  foreignField: "plan",
+  localField: "_id",
+  justOne: false,
+});
+
 const Plan = mongoose.model("Plan", planSchema);
 module.exports = Plan;

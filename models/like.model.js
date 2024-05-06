@@ -10,7 +10,7 @@ const likeSchema = mongoose.Schema({
   },
   plan: {
     type: mongoose.SchemaTypes.ObjectId,
-    ref: "Plan",
+    ref: Plan.modelName,
     required: true,
   },
 });

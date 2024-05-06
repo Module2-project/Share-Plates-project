@@ -1,7 +1,7 @@
 // metido a copia/pega , revisar y modificar
 
 const createError = require("http-errors");
-
+const Like = require("../models/like.model");
 const plan = require("../models/plans.model");
 const cuisineTypeArr = require("../constants/cuisineTypes");
 
@@ -35,8 +35,8 @@ module.exports.getPlans = (req, res, next) => {
           if (locationDB) {
             res.render("plans/list", {
               plans,
-              genres: genresArr,
-              author: authorDB.name,
+              location,
+              date,
             });
           } else {
             res.render("plans/list", { plans, cuisineType: cuisineTypeArr });
@@ -50,21 +50,22 @@ module.exports.getPlans = (req, res, next) => {
 };
 
 module.exports.getPlan = (req, res, next) => {
-  Plan.findById(req.params.id)
+  plan
+    .findById(req.params.id)
     .populate("cuisineType")
     .populate({
       path: "likes",
       populate: { path: "user", select: "email avatar" },
     })
-    .then((book) => {
-      if (!book) {
+    .then((plan) => {
+      if (!plan) {
         next(createError(404, "Plan no encontrado"));
       }
 
       if (req.currentUser) {
         return Like.findOne({
           user: req.currentUser._id,
-          book: req.params.id,
+          plan: req.params.id,
         }).then((like) => {
           if (like) {
             res.render("plans/detail", { plan, liked: Boolean(like) });
@@ -75,6 +76,43 @@ module.exports.getPlan = (req, res, next) => {
       } else {
         res.render("plans/detail", { plan });
       }
+    })
+    .catch((err) => next(err));
+};
+
+module.exports.renderCreatePlan = (req, res, next) => {
+  res.render("plans/create-plan");
+};
+
+module.exports.createPlan = (req, res, next) => {
+  const {
+    planname,
+    date,
+    location,
+    description,
+    price,
+    cuisineType,
+    image,
+    comments,
+    url,
+  } = req.body;
+
+  const newPlan = new Plan({
+    planname,
+    date,
+    location,
+    description,
+    price,
+    cuisineType,
+    image,
+    comments,
+    url,
+  });
+
+  newPlan
+    .save()
+    .then(() => {
+      res.redirect("/plans"); // Redirige a la lista de planes después de la creación
     })
     .catch((err) => next(err));
 };

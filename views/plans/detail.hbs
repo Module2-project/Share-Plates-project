@@ -1,0 +1,34 @@
+<div class="container my-3">
+    <div class="row row-cols-1 row-cols-md-2">
+        <div class="col">
+            <img class="img-fluid w-100" src="https://placehold.co/400x500" alt="">
+        </div>
+        <div class="col">
+            <h1>{{plan.planname}}</h1>
+            
+            <p>{{plan.description}}</p>
+            <p><strong>fecha:</strong> {{plan.date}}</p>
+            <p><strong>localizacion:</strong> {{plan.location}}</p>
+            <p><strong>Tipos de cocina:</strong>
+                {{#each plan.cuisineType as |cuisineType|}}
+                <a href="/plans?cuisineType={{cuisineType}}" class="badge text-bg-secondary me-2">{{cuisineType}}</a>
+                {{/each}}
+            </p>
+            <form action="/plans/{{plan._id}}/like" method="POST">
+                <button class="btn {{#if liked}}btn-danger{{else}}btn-outline-danger{{/if}}">Like</button>
+            </form>
+
+            {{#if plans.likes}}
+            <p>{{plan.likes.length}} usuarios les gusta este libro</p>
+            <div class="d-flex">
+                {{#each plan.likes as |like|}}
+                <a href="/users/{{like.user._id}}">
+                    <img class="rounded-circle border" src="{{like.user.avatar}}" title="{{like.user.email}}"
+                        width="20" />
+                </a>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
