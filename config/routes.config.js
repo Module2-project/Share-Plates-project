@@ -6,11 +6,7 @@ const authController = require("../controllers/auth.controller");
 const usersController = require("../controllers/users.controller");
 const miscController = require("../controllers/misc.controller");
 const plansController = require("../controllers/plans.controller");
-<<<<<<< HEAD
-
-=======
 const likesController = require("../controllers/likes.controller");
->>>>>>> main
 const authMiddleware = require("../middlewares/auth.middleware");
 
 const upload = require("./storage.config");
