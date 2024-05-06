@@ -41,6 +41,8 @@ router.get(
 
 router.get("/logout", authMiddleware.isAuthenticated, authController.logout);
 
+router.get("/plans/create-plan", plansController.renderCreatePlan);
+router.post("/plans/create-plan", plansController.createPlan);
 router.get("/plans", plansController.getPlans);
 router.get("/plans/:id", plansController.getPlan);
 
@@ -49,8 +51,5 @@ router.post(
   authMiddleware.isAuthenticated,
   likesController.doLike
 );
-
-router.get("/create-plan", plansController.renderCreatePlan);
-router.post("/create-plan", plansController.createPlan);
 
 module.exports = router;
