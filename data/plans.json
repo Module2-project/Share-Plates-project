@@ -8,7 +8,8 @@
     "cuisineType": ["Española", "Mediterránea", "Fusión"],
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/6e/f8/7c/pincho-moruno-a-la-brasa.jpg?w=1400&h=-1&s=1",
     "comments": "La reserva será para los primeros 10 en apuntarse. En este precioso restaurante cenaremmos algo rico y disfrutaremmos en buena compañía",
-    "url": "https://kulto.es/"
+    "url": "https://kulto.es/",
+    "maxParticipants": 10
     },
     {
     "planname": "Cena en restaurante Japonés",
@@ -19,7 +20,8 @@
     "cuisineType": ["Asiática", "Vegana"],
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/a3/64/14/getlstd-property-photo.jpg?w=2400&h=-1&s=1",
     "comments": "La reserva será para las 8 primeras personas en reservar",
-    "url": "https://misssushi.es/restaurantes/miss-sushi-avenida-de-brasil"
+    "url": "https://misssushi.es/restaurantes/miss-sushi-avenida-de-brasil",
+    "maxParticipants": 8
    },
    {
     "planname": "Comida en taberna Gallega",
@@ -29,8 +31,9 @@
     "price": [15, 25],
     "cuisineType": ["Española", "Mediterránea"],
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/76/d6/bf/zamburinas.jpg?w=1100&h=-1&s=1",
-    "comments": "La reserva será para las 8 primeras personas en reservar",
-    "url": "https://ocafu.com/"
+    "comments": "La reserva será para las 6 primeras personas en reservar",
+    "url": "https://ocafu.com/",
+   "maxParticipants": 6
    },
    {
    "planname": "Comida Mexicana",
@@ -40,8 +43,9 @@
    "price": [16, 32],
    "cuisineType": ["Mexicana", "Fusión"],
    "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/4f/2a/01/tacos-pastor.jpg?w=2000&h=-1&s=1",
-   "comments": "La reserva será para los primeros 10 en apuntarse.",
-   "url": "http://www.oyamelmadrid.es/"
+   "comments": "La reserva será para los primeros 4 en apuntarse.",
+   "url": "http://www.oyamelmadrid.es/",
+   "maxParticipants": 4
    },
    {
     "planname": "Tandoori Station",
@@ -51,8 +55,9 @@
     "price": [30, 39],
     "cuisineType": ["India", "Asiática", "Saludable"],
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/1f/58/0a/tandoori-station.jpg?w=2400&h=-1&s=1",
-    "comments": "La reserva será para los primeros 10 en apuntarse. No se lo piensen y vengan a disfrutar",
-    "url": "https://www.tandooristation.com/es"
+    "comments": "La reserva será para los primeros 8 en apuntarse. No se lo piensen y vengan a disfrutar",
+    "url": "https://www.tandooristation.com/es",
+    "maxParticipants": 8
     },
     {
     "planname": "Patio de Leones y olé",
@@ -63,7 +68,7 @@
     "cuisineType": ["Española", "Mediterránea"],
     "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/cf/a8/df/terrace.jpg?w=1400&h=-1&s=1",
     "comments": "La reserva será para los primeros 9 en apuntarse. Cada uno paga lo que consume. Después podemos ir a tomar algo y disfrutar de un concierto de rumba flamenca",
-    "url": "https://www.facebook.com/Patiodeleones/"
+    "url": "https://www.facebook.com/Patiodeleones/",
+    "maxParticipants": 9
     }
-  
 ]

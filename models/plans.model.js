@@ -38,12 +38,30 @@ const planSchema = new mongoose.Schema({
   },
   image: {
     type: String,
+    image: {
+      type: String,
+      default:
+        "https://i.pinimg.com/564x/87/16/bb/8716bba79cbeb3aac0faf1c9f7526336.jpg",
+    },
   },
   comments: {
     type: String,
   },
   url: {
     type: String,
+  },
+  creator: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "User",
+  },
+  maxParticipants: {
+    type: Number,
+    required: [true, REQUIRED_FIELD_ERROR],
+    min: 1, // El número máximo de participantes debe ser al menos 1
+  },
+  currentParticipants: {
+    type: Number,
+    default: 0,
   },
 });
 

@@ -16,6 +16,22 @@ module.exports.getUsers = (req, res, next) => {
     });
 };
 
+module.exports.getUserById = (req, res, next) => {
+  const userId = req.params.userId;
+
+  User.findById(userId)
+    .then((user) => {
+      if (!user) {
+        return res.status(404).send("Usuario no encontrado");
+      }
+      res.render("profile", { user });
+    })
+    .catch((err) => {
+      console.error("Error al obtener el usuario:", err);
+      res.status(500).send("Error interno del servidor");
+    });
+};
+
 module.exports.register = (req, res, next) => {
   res.render("users/register");
 };
@@ -43,14 +59,16 @@ module.exports.doRegister = (req, res, next) => {
     });
 };
 module.exports.getCurrentUserProfile = (req, res, next) => {
-  Like.find({ user: req.currentUser._id })
-    .populate("plan")
-    .then((likes) => {
-      res.render("profile", { likes, cuisineTypes });
+  Promise.all([
+    Like.find({ user: req.currentUser._id }).populate("plan"),
+    Plan.find({ creator: req.currentUser._id }),
+  ])
+    .then(([likes, createdPlans]) => {
+      console.log({ createdPlans });
+      res.render("profile", { likes, createdPlans });
     })
     .catch((err) => next(err));
 };
-
 module.exports.createPlan = (req, res, next) => {
   const {
     planname,
