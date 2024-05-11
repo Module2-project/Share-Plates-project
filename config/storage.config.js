@@ -1,6 +1,7 @@
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
-const CloudinaryStorage = require("multer-storage-cloudinary").CloudinaryStorage;
+const CloudinaryStorage =
+  require("multer-storage-cloudinary").CloudinaryStorage;
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
@@ -11,7 +12,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "Ironhack/Share-Plates-project",
+    folder: "ironhack/Mario-test",
     allowedFormats: ["jpg", "png"],
   },
 });

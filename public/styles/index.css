@@ -3,4 +3,10 @@
   bottom: 1.25rem;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+  background-size: cover;
 }
+
+.carousel-inner {
+  background-size: cover;
+}
+

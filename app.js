@@ -1,5 +1,7 @@
 //aqui estamos requieriendo todas las instacian y lo que vamos a usar en nuestras apps
 
+require("dotenv").config();
+
 const express = require("express");
 const path = require("path");
 const hbs = require("hbs");

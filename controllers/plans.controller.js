@@ -81,7 +81,7 @@ module.exports.getPlan = (req, res, next) => {
 };
 
 module.exports.renderCreatePlan = (req, res, next) => {
-  res.render("plans/create-plan");
+  res.render("plans/create-plan", { cuisineType: cuisineTypeArr });
 };
 
 module.exports.createPlan = (req, res, next) => {
@@ -92,12 +92,26 @@ module.exports.createPlan = (req, res, next) => {
     description,
     price,
     cuisineType,
-    image,
+
     comments,
     url,
+    maxParticipants,
   } = req.body;
 
-  const newPlan = new Plan({
+  let image;
+  if (req.file) {
+    image = req.file.path;
+  }
+  console.log(req.file);
+  if (!maxParticipants || isNaN(maxParticipants) || maxParticipants <= 0) {
+    return next(
+      createError(
+        400,
+        "El número máximo de participantes debe ser un número válido y mayor que cero"
+      )
+    );
+  }
+  const newPlan = new plan({
     planname,
     date,
     location,
@@ -107,12 +121,36 @@ module.exports.createPlan = (req, res, next) => {
     image,
     comments,
     url,
+    maxParticipants,
+    creator: req.currentUser._id,
   });
 
   newPlan
     .save()
     .then(() => {
       res.redirect("/plans"); // Redirige a la lista de planes después de la creación
+    })
+    .catch((err) => next(err));
+};
+module.exports.likePlan = (req, res, next) => {
+  Plan.findById(req.params.id)
+    .then((plan) => {
+      if (!plan) {
+        return next(createError(404, "Plan no encontrado"));
+      }
+
+      plan.participantsCount += 1;
+
+      if (plan.participantsCount >= plan.maxParticipants) {
+        plan.remove();
+
+        return res.redirect("/plans");
+      }
+
+      return plan.save();
+    })
+    .then(() => {
+      res.redirect(`/plans/${req.params.id}`);
     })
     .catch((err) => next(err));
 };

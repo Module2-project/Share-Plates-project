@@ -21,7 +21,9 @@ router.get(
 );
 router.post(
   "/register",
-  authMiddleware.isNotAuthenticated, upload.single('avatar'), usersController.doRegister
+  authMiddleware.isNotAuthenticated,
+
+  usersController.doRegister
 );
 
 router.get("/login", authMiddleware.isNotAuthenticated, authController.login);
@@ -39,8 +41,15 @@ router.get(
 
 router.get("/logout", authMiddleware.isAuthenticated, authController.logout);
 
+router.get("/users/:userId", usersController.getUserById);
+
 router.get("/plans/create-plan", plansController.renderCreatePlan);
-router.post("/plans/create-plan", plansController.createPlan);
+router.post(
+  "/plans/create-plan",
+  upload.single("avatar"),
+  plansController.createPlan
+);
+
 router.get("/plans", plansController.getPlans);
 router.get("/plans/:id", plansController.getPlan);
 
