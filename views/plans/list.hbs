@@ -18,28 +18,30 @@
             <input type="date" id="date" name="date" class="form-control">
         </div>
         <div class="col-md-12">
-            <button type="submit" class="btn btn-outline-primary">Filtrar</button>
-            <a href="/plans" class="btn btn-secondary">Limpiar Filtros</a>
+            <button type="submit" class="btn btn-outline-primary btn-custom">Filtrar</button>
+            <a href="/plans" class="btn btn-secondary ">Limpiar Filtros</a>
         </div>
     </form>
-</div>
-
-    <h1>Planes disponibles</h1>
 
 
+
+<div class="mt-5">
+    <h1 class="mt-4">Planes disponibles</h1>
 
     {{#if plans}}
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {{#each plans as |plan|}}
-        {{#if plan.currentParticipants}}
-        {{else}}
         <div class="col">
             {{> plancard plan=plan}}
         </div>
-        {{/if}}
         {{/each}}
     </div>
     {{else}}
     <p>No hay resultados con tus filtros actuales</p>
     {{/if}}
 </div>
+
+
+</div>
+
+

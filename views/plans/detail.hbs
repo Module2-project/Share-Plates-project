@@ -1,47 +1,48 @@
 <div class="container mt-4 my-4">
     <div class="row">
         <div class="col-lg-6">
-            <div class="mb-4">
+            <div class="mb-4 d-flex align-items-center">
                 <h1 class="text-center">{{plan.planname}}</h1>
-
-                <p>{{plan.description}}</p>
-                <p><strong>Fecha:</strong> {{plan.date}}</p>
-                <p><strong>Localización:</strong> {{plan.location}}</p>
-                <p><strong>Tipos de cocina:</strong>
-                    {{#each plan.cuisineType as |cuisineType|}}
-                    <a href="/plans?cuisineType={{cuisineType}}"
-                        class="badge text-bg-secondary me-2">{{cuisineType}}</a>
-                    {{/each}}
-                </p>
-                <p><strong>Participantes:</strong>
-                    {{#if plan.currentParticipants}}
-                    {{plan.currentParticipants}}/{{plan.maxParticipants}}
-                    {{else}}
-                    0/{{plan.maxParticipants}}
-                    {{/if}}
-                </p>
-
-                <form action="/plans/{{plan._id}}/like" method="POST">
-                    <button class="btn {{#if liked}}btn-danger{{else}}btn-outline-danger{{/if}}">Like</button>
-                </form>
-
-                {{#if plan.likes}}
-                <p>{{plan.likes.length}} usuarios les gusta este libro</p>
-                <div class="d-flex">
-                    {{#each plan.likes as |like|}}
-                    <a href="/users/{{like.user._id}}">
-                        <img class="rounded-circle border" src="{{like.user.avatar}}" title="{{like.user.email}}"
-                            width="30" style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;" />
-                    </a>
-                    {{/each}}
-                </div>
-                {{/if}}
+                
+                <a href="/plans/{{plan._id}}/edit-plan" class="btn btn-sm btn-outline-secondary ms-2" style="border-color: orange;">
+                    <i class="fas fa-pencil-alt"></i> 
+                </a>
             </div>
+            <p>{{plan.description}}</p>
+            <p><strong>Fecha:</strong> {{plan.date}}</p>
+            <p><strong>Localización:</strong> {{plan.location}}</p>
+            <p><strong>Precio Medio:</strong> {{plan.price}}</p>
+            <p><strong>Tipos de cocina:</strong>
+                {{#each plan.cuisineType as |cuisineType|}}
+                <a href="/plans?cuisineType={{cuisineType}}" class="badge text-bg-secondary me-2">{{cuisineType}}</a>
+                {{/each}}
+            </p>
+            <p><strong>Participantes:</strong>
+                {{#if plan.currentParticipants}}
+                {{plan.currentParticipants}}/{{plan.maxParticipants}}
+                {{else}}
+                0/{{plan.maxParticipants}}
+                {{/if}}
+            </p>
+            <form action="/plans/{{plan._id}}/like" method="POST">
+                <button class="btn {{#if liked}}btn-danger{{else}}btn-outline-danger{{/if}} ">Asistiré</button>
+            </form>
+            {{#if plan.likes}}
+            <p>{{plan.likes.length}} usuarios les gusta este plan</p>
+            <div class="d-flex">
+                {{#each plan.likes as |like|}}
+                <a href="/users/{{like.user._id}}">
+                    <img class="rounded-circle border" src="{{like.user.avatar}}" title="{{like.user.email}}" width="30"
+                        style="width: 30px; height: 30px; object-fit: cover; border-radius: 50%;" />
+                </a>
+                {{/each}}
+            </div>
+            {{/if}}
         </div>
         <div class="col-lg-6">
             <div class="mb-4">
                 <a href="/users/{{like.user._id}}">
-                    <img class="img-fluid mx-auto d-block" src="https://placehold.co/400x500" alt="">
+                    <img class="img-fluid mx-auto d-block" src="{{plan.image}}" alt="{{plan.planname}}">
                 </a>
             </div>
         </div>

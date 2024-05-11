@@ -1,68 +1,76 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-lg-8">
-            <form action="/plans/create-plan" method="post" enctype="multipart/form-data" >
-                <h1 class="text-center mb-5">Crea tu propio plan</h1>
+            <form action="/plans/create-plan" method="post" enctype="multipart/form-data">
+                <h1 class="mt-4">Crea tu propio plan</h1>
 
                 <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="planname" class="form-label">Nombre del Plan</label>
-                        <input type="text" id="planname" name="planname" class="form-control"
-                            placeholder="Ingresa el nombre del plan" required>
+                    <!-- Primera columna -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="planname" class="form-label">Nombre del Plan</label>
+                            <input type="text" id="planname" name="planname" class="form-control"
+                                placeholder="Ingresa el nombre del plan" required>
+                        </div>
+                       <div class="col-md-4 mb-3">
+    <label for="date" class="form-label">Fecha</label>
+    <input type="date" id="date" name="date" class="form-control"placeholder="Ingresa la fecha"
+                                required >
+</div>
+
+
+
+
+                        <div class="mb-3">
+                            <label for="location" class="form-label">Ubicación</label>
+                            <input type="text" id="location" name="location" class="form-control"
+                                placeholder="Ingresa la ubicación" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Descripción</label>
+                            <input type="text" id="description" name="description" class="form-control"
+                                placeholder="Ingresa la descripción" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Precio Medio</label>
+                            <input type="text" id="price" name="price" class="form-control"
+                                placeholder="Ingresa el precio" required>
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="date" class="form-label">Fecha</label>
-                        <input type="text" id="date" name="date" class="form-control" placeholder="Ingresa la fecha"
-                            required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="location" class="form-label">Ubicación</label>
-                        <input type="text" id="location" name="location" class="form-control"
-                            placeholder="Ingresa la ubicación" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="description" class="form-label">Descripción</label>
-                        <input type="text" id="description" name="description" class="form-control"
-                            placeholder="Ingresa la descripción" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="price" class="form-label">Precio</label>
-                        <input type="text" id="price" name="price" class="form-control" placeholder="Ingresa el precio"
-                            required>
-                    </div>
-                        <div class="col-md-6 mb-3">
+                    <!-- Segunda columna -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
                             <label for="maxParticipants" class="form-label">Máximo de Participantes</label>
                             <input type="number" id="maxParticipants" name="maxParticipants" class="form-control"
                                 placeholder="Ingresa el máximo de participantes" required>
                         </div>
-        <div class="col-md-6 mb-3">
-            <label for="cuisineType" class="form-label">Tipo de Cocina</label>
-            <select id="cuisineType" name="cuisineType[]" class="form-control" multiple>
-                <option value="" selected disabled>Selecciona el tipo de cocina</option>
-                {{#each cuisineType as |type|}}
-                <option value="{{type}}">{{type}}</option>
-                {{/each}}
-            </select>
-        </div>
-                </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="image" class="form-label"> Imagen</label>
-                        <input type="file" name="avatar" id="">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="comments" class="form-label">Comentarios</label>
-                        <input type="text" id="comments" name="comments" class="form-control"
-                            placeholder="Ingresa comentarios">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="url" class="form-label">URL</label>
-                        <input type="text" id="url" name="url" class="form-control" placeholder="Ingresa la URL">
+                        <div class="mb-3">
+                            <label for="cuisineType" class="form-label">Tipo de Cocina  (pulsa control/cmd para seleccionar varios)</label>
+                            <select id="cuisineType" name="cuisineType[]" class="form-control" multiple>
+                                <option value="" selected disabled>Selecciona el tipo de cocina</option>
+                                {{#each cuisineType as |type|}}
+                                <option value="{{type}}">{{type}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label"> Imagen : </label>
+                            <input type="file" name="avatar" id="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="comments" class="form-label">Comentarios</label>
+                            <input type="text" id="comments" name="comments" class="form-control"
+                                placeholder="Ingresa comentarios">
+                        </div>
+                        <div class="mb-3">
+                            <label for="url" class="form-label">URL</label>
+                            <input type="text" id="url" name="url" class="form-control" placeholder="Ingresa la URL">
+                        </div>
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary btn-custom" style="background-color: rgb(15, 6, 20); border-color: orange;">Enviar</button>
             </form>
         </div>
     </div>
 </div>
-

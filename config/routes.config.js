@@ -8,7 +8,7 @@ const miscController = require("../controllers/misc.controller");
 const plansController = require("../controllers/plans.controller");
 const likesController = require("../controllers/likes.controller");
 const authMiddleware = require("../middlewares/auth.middleware");
-
+const Plan = require("../models/plans.model");
 const upload = require("./storage.config");
 // aqui pongo las rutas .
 
@@ -41,6 +41,8 @@ router.get(
 
 router.get("/logout", authMiddleware.isAuthenticated, authController.logout);
 
+router.get("/users/edit-profile", usersController.editProfile);
+
 router.get("/users/:userId", usersController.getUserById);
 
 router.get("/plans/create-plan", plansController.renderCreatePlan);
@@ -52,7 +54,7 @@ router.post(
 
 router.get("/plans", plansController.getPlans);
 router.get("/plans/:id", plansController.getPlan);
-
+router.get("/plans/:planId/edit-plan", plansController.renderEditPlan);
 router.post(
   "/plans/:id/like",
   authMiddleware.isAuthenticated,

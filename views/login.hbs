@@ -1,23 +1,27 @@
-<div class="container mt-3">
-    <h1>Inicia sesión</h1>
-
-    <form action="/login" method="POST">
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <input value="{{values.email}}" name="email" type="email" class="form-control" id="email"
-                placeholder="name@example.com">
-        </div>
-
-        <div class="mb-3">
-            <label for="password" class="form-label">Contraseña</label>
-            <input name="password" type="password" class="form-control {{#if error}}is-invalid{{/if}}" id="password">
-            {{#if error}}
-            <div class="invalid-feedback">
-                {{error}}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-4">Inicia sesión</h1>
+                    <form action="/login" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input value="{{values.email}}" name="email" type="email" class="form-control" id="email"
+                                placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input name="password" type="password" class="form-control {{#if error}}is-invalid{{/if}}"
+                                id="password">
+                            {{#if error}}
+                            <div class="invalid-feedback">{{error}}</div>
+                            {{/if}}
+                        </div>
+                        <button class="btn btn-primary btn-custom btn-block  ">Enviar</button>
+                    </form>
+                </div>
             </div>
-            {{/if}}
         </div>
-
-        <button class="btn btn-primary">Enviar</button>
-    </form>
+    </div>
 </div>

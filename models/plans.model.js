@@ -38,11 +38,8 @@ const planSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    image: {
-      type: String,
-      default:
-        "https://i.pinimg.com/564x/87/16/bb/8716bba79cbeb3aac0faf1c9f7526336.jpg",
-    },
+    default:
+      "https://img.freepik.com/foto-gratis/vista-superior-mesas-comedor-comida_23-2150157827.jpg?t=st=1715416294~exp=1715419894~hmac=5b8e5b8fc9f5d8640d68d0aeb5d7b7987b277ecb3eeb5e27e607070755971c04&w=1800",
   },
   comments: {
     type: String,

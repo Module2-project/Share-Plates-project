@@ -101,3 +101,37 @@ module.exports.createPlan = (req, res, next) => {
     })
     .catch((err) => next(err));
 };
+
+module.exports.editProfile = (req, res, next) => {
+  const userId = req.currentUser._id;
+
+  User.findById(userId)
+    .then((user) => {
+      if (!user) {
+        return res.status(404).send("Usuario no encontrado");
+      }
+      res.render("users/edit-profile", { user });
+    })
+    .catch((err) => {
+      console.error("Error al obtener el usuario:", err);
+      res.status(500).send("Error interno del servidor");
+    });
+};
+
+module.exports.updateProfile = (req, res, next) => {
+  const userId = req.currentUser._id;
+
+  const objectId = mongoose.Types.ObjectId(userId);
+
+  User.findByIdAndUpdate(objectId, req.body, { new: true })
+    .then((updatedUser) => {
+      if (!updatedUser) {
+        return res.status(404).send("Usuario no encontrado");
+      }
+      res.redirect("/profile");
+    })
+    .catch((err) => {
+      console.error("Error al actualizar el perfil:", err);
+      res.status(500).send("Error interno del servidor");
+    });
+};

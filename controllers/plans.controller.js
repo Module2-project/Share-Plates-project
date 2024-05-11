@@ -26,6 +26,9 @@ module.exports.getPlans = (req, res, next) => {
     query.location = location;
   }
 
+  const createError = require("http-errors");
+  const Plan = require("../models/plans.model");
+
   plan
     .find(query)
     .populate("location")
@@ -39,14 +42,75 @@ module.exports.getPlans = (req, res, next) => {
               date,
             });
           } else {
-            res.render("plans/list", { plans, cuisineType: cuisineTypeArr });
+            res.render("plans/list", {
+              plans: plans.filter(
+                (plan) => plan.currentParticipants < plan.maxParticipants
+              ),
+              cuisineType: cuisineTypeArr,
+            });
           }
         });
       } else {
-        res.render("plans/list", { plans, cuisineType: cuisineTypeArr });
+        res.render("plans/list", {
+          plans: plans.filter(
+            (plan) => plan.currentParticipants < plan.maxParticipants
+          ),
+          cuisineType: cuisineTypeArr,
+        });
       }
     })
     .catch((err) => next(err));
+};
+
+// Controlador para editar un plan
+module.exports.editPlan = async (req, res, next) => {
+  try {
+    const planId = req.params.id;
+
+    const userId = req.currentUser._id;
+
+    const plan = await Plan.findOne({ _id: planId, creator: userId });
+
+    if (!plan) {
+      return next(
+        createError(403, "No tienes permiso para modificar este plan")
+      );
+    }
+
+    plan.planname = req.body.planname;
+    plan.date = req.body.date;
+    plan.location = req.body.location;
+    plan.description = req.body.description;
+    plan.price = req.body.price;
+    plan.cuisineType = req.body.cuisineType;
+    plan.image = req.body.image;
+    plan.comments = req.body.comments;
+    plan.url = req.body.url;
+    plan.maxParticipants = req.body.maxParticipants;
+
+    await plan.save();
+
+    res.redirect(`/plans/${planId}`);
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports.renderEditPlan = (req, res, next) => {
+  const planId = req.params.planId;
+
+  plan
+    .findById(planId)
+    .then((plan) => {
+      if (!plan) {
+        return res.status(404).send("Plan no encontrado");
+      }
+      res.render("plans/edit-plan", { plan });
+    })
+    .catch((err) => {
+      console.error("Error al buscar el plan:", err);
+      res.status(500).send("Error interno del servidor");
+    });
 };
 
 module.exports.getPlan = (req, res, next) => {
