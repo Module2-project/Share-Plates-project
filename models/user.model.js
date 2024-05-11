@@ -38,6 +38,12 @@ const userSchema = new mongoose.Schema({
     required: [true, REQUIRED_FIELD_ERROR],
     minLength: [8, "Password must be at least 8 characters long"],
   },
+
+  avatar: {
+    type: String,
+    default:
+      "https://res.cloudinary.com/plasoironhack/image/upload/v1713603564/ironhack/book-club/ywkmjbnwfy1vdhta1qwd.png",
+  },
 });
 
 // esa funcion se encarga de saber si la contraseña necesita ser hasheada o no

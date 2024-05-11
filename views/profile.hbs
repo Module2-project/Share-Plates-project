@@ -3,23 +3,27 @@
         <img class="rounded-circle border" src="{{currentUser.avatar}}" width="100" />
         <div>
             <h4>{{currentUser.username}}</h4>
-            <p>{{currentUser.email}}</p>
+            
+            <a href="./users/edit-profile" class="btn btn-primary mt-5 btn-custom" style="background-color: rgb(15, 6, 20); border-color: orange;">Editar perfil</a>
         </div>
     </div>
 
-    <h2 class="mt-4">Mis Planes</h2>
-    {{#if likes}}
+  
+    
+
+    <h2 class="mt-4">Mis planes</h2>
+    {{#if createdPlans}}
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        {{#each likes as |like|}} 
+        {{#each createdPlans as |plan|}}
         <div class="col">
-            {{> plancard plan=like.plan}} 
+            {{> plancard plan=plan}}
         </div>
         {{/each}}
     </div>
 
     {{else}}
-    <p>No tienes planes favoritos aún. <a href="/plans">Explora nuestros planes</a></p>
+    <p>No tienes planes creados aún. Visita <a href="/plans/create-plan">nuestro creador de planes</a></p>
     {{/if}}
 
 

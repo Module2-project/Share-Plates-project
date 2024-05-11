@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <form action="/plans/{{plan._id}}/edit" method="post">
+                <h1 class="mt-4">Editar Plan</h1>
+
+                <div class="mb-3">
+                    <label for="planname" class="form-label">Nombre del Plan:</label>
+                    <input type="text" id="planname" name="planname" class="form-control" value="{{ plan.planname }}"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="date" class="form-label">Fecha:</label>
+                    <input type="date" id="date" name="date" class="form-control" value="{{ plan.date }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Localización:</label>
+                    <input type="text" id="location" name="location" class="form-control" value="{{ plan.location }}"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Descripción:</label>
+                    <input type="text" id="description" name="description" class="form-control"
+                        value="{{ plan.description }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">Precio Medio:</label>
+                    <input type="text" id="price" name="price" class="form-control" value="{{ plan.price }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cuisineType" class="form-label">Tipo de Cocina:</label>
+                    <select id="cuisineType" name="cuisineType" class="form-control" required>
+                        {{#each cuisineTypeArr as |type|}}
+                        <option value="{{type}}" {{#if (contains plan.cuisineType type)}}selected{{/if}}>{{type}}
+                        </option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <!-- Otros campos del plan -->
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

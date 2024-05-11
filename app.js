@@ -1,11 +1,14 @@
 //aqui estamos requieriendo todas las instacian y lo que vamos a usar en nuestras apps
 
+require("dotenv").config();
+
 const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
 const logger = require("morgan");
 const app = express();
 const session = require("./config/session.config");
+const Handlebars = require("handlebars");
 // aqui estamos requiriendo la confi de moongose que la tendremos por separado
 
 require("./config/db.config");

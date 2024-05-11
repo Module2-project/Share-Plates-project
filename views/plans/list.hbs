@@ -1,41 +1,47 @@
 <div class="container mt-3">
-    <form action="/plans" method="GET">
-        {{#each cuisineTypes as |cuisineType|}}
-        <button class="btn btn-outline-secondary" type="submit" name="cuisineTypes" value="{{cuisineType}}">{{cuisineType}}</button>
-        {{/each}}
-
-        <div>
-            <label for="minPrices">Mínimo de precio</label>
-            <input id="minPrices" type="range" name="minPrices">
-            <span>Value: <output id="minPrices"></output></span>
+    <form action="/plans" method="GET" class="row">
+        <div class="col-md-4 mb-3">
+            <label for="cuisineType" class="form-label">Tipo de Cocina</label>
+            <select id="cuisineType" name="cuisineType" class="form-select">
+                <option value="">Seleccionar Tipo de Cocina</option>
+            {{#each cuisineType as |type|}}
+            <option value="{{type}}">{{type}}</option>
+            {{/each}}
+            </select>
         </div>
-        <div>
-            <label for="">Máximo de precios</label>
-            <input id="maxPrices" type="range" name="maxPrices">
-            <span>Value: <output id="maxPrices"></output></span>
+        <div class="col-md-4 mb-3">
+            <label for="maxPrice" class="form-label">Precio Máximo</label>
+            <input type="number" id="maxPrice" name="maxPrice" class="form-control">
         </div>
-
-        <button class="btn btn-outline-primary">Enviar</button>
-        <a class="btn btn-secondary" href="/Plans">Limpiar filtros</a>
+        <div class="col-md-4 mb-3">
+            <label for="date" class="form-label">Fecha</label>
+            <input type="date" id="date" name="date" class="form-control">
+        </div>
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-outline-primary btn-custom">Filtrar</button>
+            <a href="/plans" class="btn btn-secondary ">Limpiar Filtros</a>
+        </div>
     </form>
 
 
-<h1>Planes disponibles</h1>
 
-{{#if cuisineType}}
-<h4>Mostrando los Planes de {{cuisineType}}</h4>
-{{/if}}
+<div class="mt-5">
+    <h1 class="mt-4">Planes disponibles</h1>
 
-{{#if plans}}
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    {{#each plans as |plan|}}
-    <div class="col">
-        {{> plancard plan=plan}}
+    {{#if plans}}
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {{#each plans as |plan|}}
+        <div class="col">
+            {{> plancard plan=plan}}
+        </div>
+        {{/each}}
     </div>
-    {{/each}}
+    {{else}}
+    <p>No hay resultados con tus filtros actuales</p>
+    {{/if}}
 </div>
-{{else}}
-<p>No hay resultados con tus filtros actuales</p>
-{{/if}}
+
 
 </div>
+
+

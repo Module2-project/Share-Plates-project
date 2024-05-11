@@ -1,0 +1,45 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.carousel-caption {
+  right: -22%;
+  bottom: 1.25rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  background-size: cover;
+}
+.carousel-inner {
+  background-size: cover;
+}
+.carousel-caption img {
+  margin-bottom: -70px; /* Ajusta el espacio entre la imagen y el texto según sea necesario */
+}
+body {
+  background-color: #f2f2f2;
+}
+h2.mt-4 {
+  border-bottom: 4px solid orange;
+  display: inline-block;
+  padding-bottom: 6px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+h1.mt-4 {
+  text-align: center;
+  border-bottom: 4px solid orange;
+  padding-bottom: 6px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.btn-custom {
+  color: white;
+  background-color: rgb(15, 6, 20);
+  border-color: orange;
+}
+
+.btn-custom:hover {
+  color: orange;
+  background-color: rgb(15, 6, 20);
+  border-color: orange;
+}

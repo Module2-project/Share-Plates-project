@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark" style="height: 60px">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Share Plates</a>
+        <a class="navbar-brand" href="/">
+            <img src="/img/logo_blanco.png" height="60" alt="Share Plates">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -12,11 +14,15 @@
                     <a class="nav-link" aria-current="page" href="/profile">Mi perfil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/create-plan">Crear plan</a>
+                    <a class="nav-link" aria-current="page" href="/plans/create-plan">Crear plan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/plans">Ver planes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/logout">Cerrar sesión</a>
                 </li>
+
                 {{else}}
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="/register">Regístrate</a>
